@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Подключение CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Главная</a></li> <!-- Ссылка на главную страницу -->
+                <li><a href="{{ url_for('about') }}">О нас</a></li> <!-- Ссылка на страницу "О нас" -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %} <!-- Блок для замены контента на дочерних страницах -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2023 Мой сайт. Все права защищены.</p>
+    </footer>
+</body>
+</html>
